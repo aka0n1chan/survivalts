@@ -15,3 +15,8 @@ test('ボタンをクリックするとON/OFFの表示が切り替わる', async
   //アサーション
   expect(simpleButton).toHaveTextContent('ON');
 });
+
+test('描画されてすぐはOFFと表示', () => {
+  const view = render(<SimpleButton />);
+  expect(view.container).toMatchSnapshot();
+});
